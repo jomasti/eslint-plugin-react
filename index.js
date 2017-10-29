@@ -13,6 +13,7 @@ const allRules = {
   'jsx-boolean-value': require('./lib/rules/jsx-boolean-value'),
   'jsx-closing-bracket-location': require('./lib/rules/jsx-closing-bracket-location'),
   'jsx-closing-tag-location': require('./lib/rules/jsx-closing-tag-location'),
+  'jsx-curly-newline': require('./lib/rules/jsx-curly-newline'),
   'jsx-curly-spacing': require('./lib/rules/jsx-curly-spacing'),
   'jsx-equals-spacing': require('./lib/rules/jsx-equals-spacing'),
   'jsx-filename-extension': require('./lib/rules/jsx-filename-extension'),

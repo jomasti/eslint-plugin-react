@@ -2118,5 +2118,47 @@ ruleTester.run('jsx-curly-spacing', rule, {
     }, {
       message: 'A space is required before \'}\''
     }]
+  }, {
+    code: `
+    <App foo={
+      foo } />`,
+    output: `
+    <App foo={
+      foo
+} />`,
+    options: ['consistent'],
+    errors: [{
+      message: 'There should be a newline before \'}\''
+    }]
+  }, {
+    code: `
+    <App foo={ foo
+    } />`,
+    output: `
+    <App foo={
+foo
+    } />`,
+    options: ['consistent'],
+    errors: [{
+      message: 'There should be a newline after \'{\''
+    }]
+  }, {
+    code: `
+    <App foo={ foo} />`,
+    output: `
+    <App foo={ foo } />`,
+    options: ['consistent'],
+    errors: [{
+      message: 'A space is required before \'}\''
+    }]
+  }, {
+    code: `
+    <App foo={foo } />`,
+    output: `
+    <App foo={ foo } />`,
+    options: ['consistent'],
+    errors: [{
+      message: 'A space is required after \'{\''
+    }]
   }]
 });
