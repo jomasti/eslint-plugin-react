@@ -174,7 +174,7 @@ ruleTester.run('no-typos', rule, {
       const contextTypes = "CONTEXTTYPES"
       const childContextTypes = "CHILDCONTEXTTYPES"
       const defautProps = "DEFAULTPROPS"
-      
+
       class First extends React.Component {}
       First[propTypes] = {};
       First[contextTypes] = {};
@@ -346,6 +346,17 @@ ruleTester.run('no-typos', rule, {
       };
     `,
     parser: 'babel-eslint'
+  }, {
+    // don't crash on PropTypes.shape without arguments
+    code: `
+      function Foo(props) {
+        return <Bar />;
+      }
+      Foo.propTypes = {
+        baz: PropTypes.shape()
+      }
+    `,
+    parserOptions: parserOptions
   }],
 
   invalid: [{
